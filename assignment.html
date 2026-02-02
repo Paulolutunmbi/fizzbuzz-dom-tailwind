@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fizz Buzz</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> 
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white w-full max-w-md rounded-xl shadow-lg p-6">
+    <h2 class="text-2xl font-bold text-center mb-4 text-gray-800">
+      Fizz Buzz (1 – 50)
+    </h2>
+
+    <div id="show" class="space-y-2 text-sm"></div>
+  </div>
+
+<script>
+  const show = document.getElementById("show");
+
+  for (let i = 1; i <= 50; i++) {
+
+    if (i % 3 === 0 && i % 5 === 0) {
+      show.innerHTML += `
+        <p class="bg-purple-100 text-purple-700 px-3 py-1 rounded">
+          ${i} - fizz buzz
+        </p>
+      `;
+    } 
+    else if (i % 3 === 0) {
+      show.innerHTML += `
+        <p class="bg-green-100 text-green-700 px-3 py-1 rounded">
+          ${i} - fizz
+        </p>
+      `;
+    } 
+    else if (i % 5 === 0) {
+      show.innerHTML += `
+        <p class="bg-blue-100 text-blue-700 px-3 py-1 rounded">
+          ${i} - buzz
+        </p>
+      `;
+    } 
+    else {
+      show.innerHTML += `
+        <p class="bg-gray-100 text-gray-600 px-3 py-1 rounded">
+          ${i} - neither fizz nor buzz
+        </p>
+      `;
+    }
+  }
+</script>
+
+</body>
+</html>
